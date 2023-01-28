@@ -1,0 +1,83 @@
+{% extends 'arena_cyber_sport/base.html' %}
+{% block content %}
+    <div class="nk-main">
+        
+            <!-- START: Breadcrumbs -->
+<div class="nk-gap-1"></div>
+<div class="container">
+    <ul class="nk-breadcrumbs">
+        
+        
+        <li><a href="index.html">Home</a></li>
+        
+        
+        <li><span class="fa fa-angle-right"></span></li>
+        
+        <li><a href="#">Blog</a></li>
+        
+        
+        <li><span class="fa fa-angle-right"></span></li>
+        
+        <li><span>Blog FullWidth</span></li>
+        
+    </ul>
+</div>
+<div class="nk-gap-1"></div>
+<!-- END: Breadcrumbs -->
+
+        
+
+        
+<div class="container">
+    <!-- START: Posts FullWidth -->
+    <div class="nk-blog-fullwidth">
+       {% for i in news %} 
+        <!-- START: Post -->
+        <div class="nk-blog-post">
+            <a href="{{i.get_absolute_url}}" class="nk-post-img">
+                <img src="{{i.news_pic.url}}" alt="Smell magic in the air. Or maybe barbecue">
+            </a>
+            <div class="nk-gap-2"></div>
+            <div class="row vertical-gap">
+                <div class="col-md-8 col-lg-9">
+                    <h2 class="nk-post-title h4"><a href="{{i.get_absolute_url}}">{{i.news_title}}</a></h2>
+                    <div class="nk-gap"></div>
+                    <div class="nk-post-text">
+                        <p>{{i.news_desc}}</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- END: Post -->
+        
+       
+        {%endfor%}
+        
+
+        <!-- START: Pagination -->
+        <div class="nk-pagination nk-pagination-center">
+            <a href="#" class="nk-pagination-prev">
+                <span class="ion-ios-arrow-back"></span>
+            </a>
+            <nav>
+                <a class="nk-pagination-current" href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <span>...</span>
+                <a href="#">14</a>
+            </nav>
+            <a href="#" class="nk-pagination-next">
+                <span class="ion-ios-arrow-forward"></span>
+            </a>
+        </div>
+        <!-- END: Pagination -->
+    </div>
+    <!-- END: Posts FullWidth -->
+</div>
+
+<div class="nk-gap-2"></div>
+
+
+        {%endblock content%}
